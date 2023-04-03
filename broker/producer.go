@@ -2,6 +2,7 @@ package broker
 
 import (
 	"encoding/json"
+	"fmt"
 	"log"
 
 	"github.com/eminoz/logging/model"
@@ -45,6 +46,7 @@ func (u userProducer) CreatedUser(user model.User) {
 		log.Fatal("Failed to encode struct:", err)
 	}
 
+	fmt.Print(jsonData)
 	ch.Publish(
 		"",     // exchange
 		q.Name, // routing key

@@ -13,8 +13,8 @@ func main() {
 	broker.Connect()
 	f.Get("/", func(c *fiber.Ctx) error { return c.JSON("hello") })
 	f.Post("/create", func(c *fiber.Ctx) error {
-		user := &model.User{}
-		c.BodyParser(*user)
+		user := new(model.User)
+		c.BodyParser(user)
 		b := broker.NewUserProducer()
 		b.CreatedUser(*user)
 		fmt.Print("user sent to rabbitmq")

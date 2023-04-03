@@ -1,6 +1,7 @@
 package broker
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/streadway/amqp"
@@ -13,7 +14,7 @@ func Connect() *amqp.Channel {
 	if err != nil {
 		log.Fatal("Failed to connect to RabbitMQ:", err)
 	}
-
+	fmt.Print("rabbit connected")
 	// Use the connection to create a channel
 	ch, err := conn.Channel()
 	if err != nil {

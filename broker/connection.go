@@ -14,13 +14,13 @@ func Connect() *amqp.Channel {
 	if err != nil {
 		log.Fatal("Failed to connect to RabbitMQ:", err)
 	}
-	fmt.Print("rabbit connected")
 	// Use the connection to create a channel
 	ch, err := conn.Channel()
 	if err != nil {
 		log.Fatal("Failed to open a channel:", err)
 	}
 	Channel = ch
+	fmt.Print("rabbit connected")
 	return ch
 }
 func GetBrokerConnection() *amqp.Channel {

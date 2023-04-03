@@ -18,7 +18,7 @@ func main() {
 		b := broker.NewUserProducer()
 		b.CreatedUser(*user)
 		fmt.Print("user sent to rabbitmq")
-		return c.JSON("hello")
+		return c.JSON(user)
 	})
 
 	f.Listen(":3000")

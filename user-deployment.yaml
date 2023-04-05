@@ -17,6 +17,7 @@ spec:
       containers:
         - name: myapp-container
           image: eminoz/rb
+          imagePullPolicy: Always # Always pull the latest image
           ports:
             - containerPort: 80
 ---

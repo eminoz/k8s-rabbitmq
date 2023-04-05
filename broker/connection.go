@@ -20,7 +20,7 @@ func Connect() *amqp.Channel {
 		log.Fatal("Failed to open a channel:", err)
 	}
 	Channel = ch
-	fmt.Print("rabbit connected")
+	fmt.Print("rabbit connected 2")
 	return ch
 }
 func GetBrokerConnection() *amqp.Channel {
